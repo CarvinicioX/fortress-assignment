@@ -5,9 +5,6 @@ const fs = require('fs');
 const port = 3000;
 const rooms = require('./files/rooms.json');
 const requests = require('./files/requests.json');
-const {
-  response
-} = require('express');
 
 app.use(express.json());
 
@@ -26,7 +23,6 @@ app.post('/reservations', (req, res) => {
   } = req.body;
 
   var new_reservation = null;
-  var rooms_booked = [];
   var reservations = JSON.parse(fs.readFileSync('./files/reservations.json'));
 
   let i = 0;
